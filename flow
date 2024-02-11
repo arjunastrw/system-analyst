@@ -1,0 +1,46 @@
+1. High Level Design Architecture:
+
+    Frontend: Menggunakan kerangka kerja pengembangan aplikasi seluler seperti React Native atau Flutter.
+    Backend: RESTful API menggunakan bahasa pemrograman seperti Node.js atau Python dengan framework Flask atau Django.
+    Database: MySQL atau MongoDB untuk menyimpan data pengguna dan transaksi.
+    Authentication: Menggunakan JWT (JSON Web Token) untuk otentikasi pengguna.
+    Storage: Penyimpanan foto KTP pengguna dapat dilakukan di cloud storage seperti AWS S3 atau Google Cloud Storage.
+    Notification: Pengiriman notifikasi melalui layanan pihak ketiga seperti Firebase Cloud Messaging atau OneSignal.
+    Security: Penggunaan HTTPS untuk mengamankan komunikasi antara aplikasi seluler dan server.
+
+2. Design Screen Flow dan ERD:
+
+    Screen Flow:
+        Registrasi
+        Login
+        Dashboard (Melihat sisa hutang dan tagihan per bulan)
+        Form Peminjaman
+        Proses Peminjaman
+    Entity-Relationship Diagram (ERD):
+
+3. Detail Design untuk API:
+
+    Endpoints:
+        /register: Endpoint untuk registrasi pengguna baru.
+        /login: Endpoint untuk otentikasi pengguna.
+        /dashboard: Endpoint untuk mengambil data sisa hutang dan tagihan.
+        /loan: Endpoint untuk mengajukan pinjaman.
+    Data Model:
+        User: id, nama, email, nomor telepon, foto KTP, password_hash
+        Pinjaman: id, id_user, jumlah_pinjaman, tenor, status (diterima/ditolak)
+
+4. Detail Design untuk Screen Behavior:
+
+    Registrasi:
+        Pengguna memasukkan data diri, email, nomor telepon, dan upload foto KTP.
+        Data validasi dilakukan di frontend sebelum dikirim ke server.
+    Login:
+        Pengguna dapat masuk menggunakan password atau biometrik jika didukung oleh perangkat.
+    Dashboard:
+        Menampilkan sisa hutang dan tagihan per bulan.
+    Form Peminjaman:
+        Pengguna memasukkan jumlah pinjaman dan tenor.
+    Proses Peminjaman:
+        Setelah pengguna mengajukan pinjaman, aplikasi akan menampilkan status peminjaman (diterima/ditolak) dan mengirim notifikasi via email dan nomor telepon yang terdaftar.
+
+Ini adalah desain awal untuk proyek aplikasi fintech Anda. Pastikan untuk terus mengembangkan dan menyesuaikan desain ini seiring dengan perkembangan proyek dan kebutuhan bisnis Anda.
